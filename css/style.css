@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #A4A18E;
+  color: black;
+}
+
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Шапка */
+.header {
+  background: #34332D;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+/* Основний блок */
+.content {
+  background: #D3B39B;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Список котів */
+.cats-list {
+  list-style: decimal;
+  padding-left: 20px;
+  font-size: 24px;
+}
+
+.cats-list li {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.images img {
+  max-width: 100%;
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  border: 3px solid #34332D;
+  transition: transform 0.3s ease;
+}
+
+.images img:hover {
+  transform: scale(1.05);
+}
+.cat-list {
+  font-size: 24px;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+.cat-list span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.cat-list a {
+  color: #34332D;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.cat-list a:hover {
+  color: #A12C2C; /* змінюється колір при наведенні */
+  text-decoration: underline;
+}
+
+.main-container {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.main-container.page-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Заголовки – легка пульсація */
+@keyframes pulseAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+.pulse {
+  animation: pulseAnim 0.6s ease-in-out;
+}
+
+/* Зображення – плавна поява при скролі */
+.images img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.images img.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Зображення – масштаб при наведенні */
+.images img:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+/* Посилання – плавна зміна кольору */
+.cat-list a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.cat-list a.link-hover {
+  color: #ff6600;
+  text-shadow: 0 0 5px #ffa64d;
+}
+
